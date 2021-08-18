@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Atributo } from '../interfaces/atributo';
+import { map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -23,11 +24,33 @@ export class AtributoService {
       }
 
       case 'name': {
-        return this.http.get<Atributo[]>('assets/data/data.json');
+        return this.http.get<Atributo[]>('assets/data/data.json').pipe(
+          tap((atributos) =>
+            atributos.sort((a, b) => a.nombre.localeCompare(b.nombre))
+          )
+        );
       }
 
-      case 'cantidad': {
-        return this.http.get<Atributo[]>('assets/data/data.json');
+      case 'quantityMinor': {
+        return this.http
+          .get<Atributo[]>('assets/data/data.json')
+          .pipe(
+            tap((atributos) =>
+              atributos.sort((a, b) => a.cantidad - b.cantidad)
+            )
+          );
+      }
+
+      case 'quantityMajor': {
+        return this.http
+          .get<Atributo[]>('assets/data/data.json')
+          .pipe(
+            tap((atributos) => {
+              console.log(atributos);
+              return atributos.sort((a, b) => a.cantidad - b.cantidad);
+            })
+          )
+          .pipe(tap((atributos) => atributos.reverse()));
       }
 
       default: {

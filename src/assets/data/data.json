@@ -4,12 +4,16 @@
     "cantidad":11
   },
   {
-    "nombre": "Causas litigantes",
-    "cantidad": 45
-  },
-  {
     "nombre": "Genchi servicio de gendarmería",
     "cantidad": 0
+  },
+  {
+    "nombre": "Situación de libertad",
+    "cantidad": 4
+  },
+  {
+    "nombre": "Causas litigantes",
+    "cantidad": 45
   },
   {
     "nombre": "Incompetencias especiales",
@@ -20,8 +24,8 @@
     "cantidad": 15
   },
   {
-    "nombre": "Multas vencidas / pendientes",
-    "cantidad": 32
+    "nombre": "Sentencias",
+    "cantidad": 8
   },
   {
     "nombre": "Notificaciones pendientes",
@@ -32,11 +36,7 @@
     "cantidad": 444
   },
   {
-    "nombre": "Sentencias",
-    "cantidad": 8
-  },
-  {
-    "nombre": "Situación de libertad",
-    "cantidad": 4
+    "nombre": "Multas vencidas / pendientes",
+    "cantidad": 32
   }
 ]

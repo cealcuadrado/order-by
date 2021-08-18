@@ -12,14 +12,13 @@ export class LayoutComponent implements OnInit {
   currentOrden: any;
 
   ordenes: any = [
-    { nombre: 'Por defecto', value: 'default'},
-    { nombre: 'Por nombre', value: 'name'},
-    { nombre: 'Por cantidad', value: 'quantity'}
+    { nombre: 'Por defecto', value: 'default' },
+    { nombre: 'Por nombre (A - Z)', value: 'name' },
+    { nombre: 'Por cantidad (menor a mayor)', value: 'quantityMinor' },
+    { nombre: 'Por cantidad (mayor a menor)', value: 'quantityMajor' },
   ];
 
-  constructor(
-    private atributo: AtributoService
-  ) {}
+  constructor(private atributo: AtributoService) {}
 
   ngOnInit(): void {
     this.currentOrden = this.ordenes[0].value;
@@ -30,7 +29,8 @@ export class LayoutComponent implements OnInit {
   public obtenerAtributosOrdenadosPor(parametro: string) {
     console.log(parametro);
     this.atributos = [];
-    this.atributo.getAtributosBy(parametro).subscribe(atributos => {
+    this.atributo.getAtributosBy(parametro).subscribe((atributos) => {
+      console.log(atributos);
       this.atributos = atributos;
     });
   }
