@@ -12,7 +12,7 @@
     </div>
   </div>
 </div>
-<div class="row">
+<div class="row" *ngIf="atributos.length > 0; else nowLoading">
   <div class="col-12 col-md-6 col-lg-3" *ngFor="let atributo of atributos; let i = index">
     <div class="card indicador-trazabilidad mb-3" [ngClass]="determinarColor(atributo.cantidad)">
       <div class="d-flex justify-content-between py-4 px-2 align-items-center text-center">
@@ -26,3 +26,8 @@
     </div>
   </div>
 </div>
+<ng-template #nowLoading>
+  <div class="text-center">
+    <p><i class="fas fa-spinner fa-spin fa-fw"></i> Cargando...</p>
+  </div>
+</ng-template>

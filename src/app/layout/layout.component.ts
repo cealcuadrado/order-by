@@ -23,12 +23,13 @@ export class LayoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.currentOrden = this.ordenes[0].value;
-    
+
     this.obtenerAtributosOrdenadosPor(this.currentOrden);
   }
 
   public obtenerAtributosOrdenadosPor(parametro: string) {
     console.log(parametro);
+    this.atributos = [];
     this.atributo.getAtributosBy(parametro).subscribe(atributos => {
       this.atributos = atributos;
     });
