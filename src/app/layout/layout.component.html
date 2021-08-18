@@ -1,6 +1,20 @@
 <div class="row">
+  <div class="col-12 col-lg-4 offset-lg-8">
+    <div class="form-group text-center">
+      <label>Ordenar</label>
+      <select class="form-control"
+        [(ngModel)]="currentOrden"
+        (ngModelChange)="obtenerAtributosOrdenadosPor(currentOrden)">
+        <option *ngFor="let orden of ordenes" [value]="orden.value">
+          {{orden.nombre}}
+        </option>
+      </select>
+    </div>
+  </div>
+</div>
+<div class="row">
   <div class="col-12 col-md-6 col-lg-3" *ngFor="let atributo of atributos; let i = index">
-    <div class="card indicador-trazabilidad bg-primary mb-3">
+    <div class="card indicador-trazabilidad mb-3" [ngClass]="determinarColor(atributo.cantidad)">
       <div class="d-flex justify-content-between py-4 px-2 align-items-center text-center">
         <div class="nombre">
           {{atributo.nombre}}

@@ -15,4 +15,24 @@ export class AtributoService {
   getAtributos(): Observable<Atributo[]> {
     return this.http.get<Atributo[]>('assets/data/data.json');
   }
+
+  getAtributosBy(parametro: string): Observable<Atributo[]> {
+    switch (parametro) {
+      case 'default': {
+        return this.http.get<Atributo[]>('assets/data/data.json');
+      }
+
+      case 'name': {
+        return this.http.get<Atributo[]>('assets/data/data.json');
+      }
+
+      case 'cantidad': {
+        return this.http.get<Atributo[]>('assets/data/data.json');
+      }
+
+      default: {
+        return this.http.get<Atributo[]>('assets/data/data.json');
+      }
+    }
+  }
 }
