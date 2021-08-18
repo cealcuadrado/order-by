@@ -23,12 +23,24 @@ export class AtributoService {
         return this.http.get<Atributo[]>('assets/data/data.json');
       }
 
-      case 'name': {
-        return this.http.get<Atributo[]>('assets/data/data.json').pipe(
-          tap((atributos) =>
-            atributos.sort((a, b) => a.nombre.localeCompare(b.nombre))
-          )
-        );
+      case 'nameAZ': {
+        return this.http
+          .get<Atributo[]>('assets/data/data.json')
+          .pipe(
+            tap((atributos) =>
+              atributos.sort((a, b) => a.nombre.localeCompare(b.nombre))
+            )
+          );
+      }
+
+      case 'nameZA': {
+        return this.http
+          .get<Atributo[]>('assets/data/data.json')
+          .pipe(
+            tap((atributos) =>
+              atributos.sort((a, b) => a.nombre.localeCompare(b.nombre) * -1)
+            )
+          );
       }
 
       case 'quantityMinor': {

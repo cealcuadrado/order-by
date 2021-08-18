@@ -13,7 +13,8 @@ export class LayoutComponent implements OnInit {
 
   ordenes: any = [
     { nombre: 'Por defecto', value: 'default' },
-    { nombre: 'Por nombre (A - Z)', value: 'name' },
+    { nombre: 'Por nombre (A - Z)', value: 'nameAZ' },
+    { nombre: 'Por nombre (Z - A)', value: 'nameZA' },
     { nombre: 'Por cantidad (menor a mayor)', value: 'quantityMinor' },
     { nombre: 'Por cantidad (mayor a menor)', value: 'quantityMajor' },
   ];
