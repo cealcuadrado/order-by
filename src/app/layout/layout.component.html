@@ -1,1 +1,14 @@
-<p>layout works!</p>
+<div class="row">
+  <div class="col-12 col-md-6 col-lg-3" *ngFor="let atributo of atributos; let i = index">
+    <div class="card indicador-trazabilidad bg-primary mb-3">
+      <div class="d-flex justify-content-between py-4 px-2 align-items-center text-center">
+        <div class="nombre">
+          {{atributo.nombre}}
+        </div>
+        <div class="cantidad rounded py-2">
+          {{atributo.cantidad}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
